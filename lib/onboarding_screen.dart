@@ -28,9 +28,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               PageFooter(
                 pageIndex: pageIndex,
                 onPrevPressed: () {
-                  setState(() {
-                    pageIndex--;
-                  });
+                  if (pageIndex == 0) {
+                    //navigate to home
+                  } else {
+                    setState(() {
+                      pageIndex--;
+                    });
+                  }
                 },
                 onNextPressed: () {
                   if (pageIndex == AppUiConstants.onboardingPages.length - 1) {
