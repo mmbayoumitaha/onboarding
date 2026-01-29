@@ -5,13 +5,27 @@ import '../Resources/app_text_styles.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key, required this.pageIndex});
+
   final int pageIndex;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(AppUiConstants.onboardingPages[pageIndex].image),
+        Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                AppUiConstants.onboardingPages[pageIndex].background,
+              ),
+              fit: BoxFit.none,
+              alignment: pageIndex != 1
+                  ? Alignment.center
+                  : Alignment.centerLeft,
+            ),
+          ),
+          child: Image.asset(AppUiConstants.onboardingPages[pageIndex].image),
+        ),
         SizedBox(height: 30),
         Text(
           AppUiConstants.onboardingPages[pageIndex].title,

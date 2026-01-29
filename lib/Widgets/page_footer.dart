@@ -48,7 +48,7 @@ class PageFooter extends StatelessWidget {
           child: TextButton(
             onPressed: onPrevPressed,
             child: Text(
-              'Skip'.padRight(11, ' '),
+              'Skip'.padRight(10, ' '),
               style: AppTextStyles.pinkColor20Normal,
             ),
           ),
@@ -61,12 +61,9 @@ class PageFooter extends StatelessWidget {
               children: AppUiConstants.onboardingPages
                   .map(
                     (e) => AnimatedContainer(
-                  duration: Duration(seconds: 1),
+                  duration: Duration(seconds: 0),
                   curve: Curves.easeIn,
-                  width:
-                  pageIndex == AppUiConstants.onboardingPages.indexOf(e)
-                      ? 40
-                      : 10,
+                  width:10,
                   height: 10,
                   decoration: BoxDecoration(
                     color:
@@ -86,7 +83,7 @@ class PageFooter extends StatelessWidget {
           child: TextButton(
             onPressed: onNextPressed,
             child: Text(
-              'Next'.padRight(5, ' '),
+              'Next'.padRight(7, ' ').padLeft(11, ' '),
               style: AppTextStyles.pinkColor20Normal,
             ),
           ),
